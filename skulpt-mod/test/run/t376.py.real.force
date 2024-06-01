@@ -1,0 +1,1 @@
+EXCEPTION: TypeError: object of type 'NoLen' has no len() on line 21

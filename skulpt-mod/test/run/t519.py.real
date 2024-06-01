@@ -1,0 +1,16 @@
+2
+2
+3
+2
+3
+2
+2
+3
+ValueError("'l' is not in list")
+ValueError("'l' is not in list")
+ValueError("'l' is not in list")
+ValueError("'l' is not in list")
+ValueError("'l' is not in list")
+ValueError("'l' is not in list")
+TypeError('slice indices must be integers or have an __index__ method')
+TypeError('slice indices must be integers or have an __index__ method')
