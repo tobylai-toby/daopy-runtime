@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
     entry: path.resolve(__dirname, 'daopy.js'),
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'daopy-dist'),
         filename: './daopy.js',
         libraryTarget: 'commonjs2'
     },

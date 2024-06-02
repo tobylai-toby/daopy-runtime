@@ -21,7 +21,7 @@ function build(){
     for(let module_ in modules){
         loadModuleFiles(module_,modules[module_]);
     }
-    if(!fs.existsSync("./dist"))fs.mkdirSync("./dist");
+    if(!fs.existsSync("./daopy-dist"))fs.mkdirSync("./daopy-dist");
     // fs.copyFileSync("./module/dao3/daopy-utils.js","./dist/daopy-utils.js");
     fs.writeFileSync("./dist/daopy_modules.js",`/*auto-generated*/module.exports=${JSON.stringify(res)}`);
 }
