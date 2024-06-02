@@ -39,6 +39,29 @@ function run(code,extReadFn=null) {
     });
     myPromise.then(function (mod) {},function (err) {console.error(err.toString());});
 }
+function loadProjectAndRun(project,readFn){
+    function outputFunc(text) {
+        console.log(text);
+    }
+    let newReadFn=installReadFn(readFn,project.mods);
+    Sk.configure({
+        __future__: Sk.python3,
+        output: outputFunc,
+        read: newReadFn,
+        systemexit: true,
+        fileopen: file => {
+            console.log("skulpt file open ", file);
+        },
+        filewrite: file => {
+            console.log("skulpt file write ", file);
+        },
+    });
+    var myPromise = Sk.misceval.asyncToPromise(function () {
+        let entry=project.entry||"index";
+        return Sk.importMainWithBody(entry,false,newReadFn(`./${entry}.py`),true)
+    });
+    myPromise.then(function (mod) {},function (err) {console.error(err.toString());});
+}
 module.exports = {
-    run,installReadFn,Sk,builtinRead
+    run,installReadFn,Sk,builtinRead,loadProjectAndRun
 }
