@@ -5,7 +5,7 @@
   "main": "daopy.js",
   "scripts": {
     "build-skulpt": "cd skulpt-mod && npm run buildall && cd ..",
-    "build-daopy":"webpack",
+    "build-daopy":"webpack && uglifyjs daopy-dist/daopy.js --compress --mangle --output daopy-dist/daopy.js",
     "build-mod":"node build-dao-mod.js"
   },
   "keywords": [],

@@ -27,12 +27,6 @@ function run(code,extReadFn=null) {
         output: outputFunc,
         read: readFn,
         systemexit: true,
-        fileopen: file => {
-            console.log("skulpt file open ", file);
-        },
-        filewrite: file => {
-            console.log("skulpt file write ", file);
-        },
     });
     var myPromise = Sk.misceval.asyncToPromise(function () {
         return Sk.importMainWithBody("<stdin>", false, code, true)
@@ -49,12 +43,6 @@ function loadProjectAndRun(project,readFn){
         output: outputFunc,
         read: newReadFn,
         systemexit: true,
-        // fileopen: file => {
-        //     console.log("skulpt file open ", file);
-        // },
-        // filewrite: file => {
-        //     console.log("skulpt file write ", file);
-        // },
     });
     var myPromise = Sk.misceval.asyncToPromise(function () {
         let entry=project.entry||"index";
