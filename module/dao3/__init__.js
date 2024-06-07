@@ -54,6 +54,9 @@ var $builtinmodule = function (name) {
     mod.voxels = wrapObj(voxels, mod);
     mod.http = wrapObj(http, mod);
     mod.resources = wrapObj(resources, mod);
+    mod.storage=wrapObj(storage, mod);
+    mod.rtc=wrapObj(rtc, mod);
+    mod.remoteChannel=wrapObj(remoteChannel, mod);
     for (let k of Object.keys(global)) {
         if (k.startsWith("Game")) {
             mod[k] = wrapClass(global[k], mod);
