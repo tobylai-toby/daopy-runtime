@@ -1,5 +1,5 @@
 const daopy = require("./daopy.js");
-const daopy_modules = require("./dist/daopy_modules.js");
+const daopy_modules = require("./daopy-dist/daopy_modules.js");
 // global.world={
 //     say:(msg)=>{console.log(msg)},
 //     onChat:(fn)=>{
@@ -13,7 +13,7 @@ const daopy_modules = require("./dist/daopy_modules.js");
 daopy.loadProjectAndRun({
     entry:"index",
     mods:{
-        "./index.py":"import utils;print(utils.add(10))",
+        "./index.py":"import utils\nprint(utils.add(1))\nwith open('./utils.py') as fp: print(fp.read())",
         "./utils.py":"def add(n):return n+1",
     }
 },daopy.installReadFn(daopy.builtinRead,daopy_modules))

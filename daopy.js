@@ -49,12 +49,12 @@ function loadProjectAndRun(project,readFn){
         output: outputFunc,
         read: newReadFn,
         systemexit: true,
-        fileopen: file => {
-            console.log("skulpt file open ", file);
-        },
-        filewrite: file => {
-            console.log("skulpt file write ", file);
-        },
+        // fileopen: file => {
+        //     console.log("skulpt file open ", file);
+        // },
+        // filewrite: file => {
+        //     console.log("skulpt file write ", file);
+        // },
     });
     var myPromise = Sk.misceval.asyncToPromise(function () {
         let entry=project.entry||"index";
