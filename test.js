@@ -13,8 +13,7 @@ global.voxels=global.http=global.resources=global.storage=global.world=global.re
 daopy.loadProjectAndRun({
     entry:"index",
     mods:{
-        "./index.py":`from dao3 import *
-utils.js.eval("console.log('hi')")
-print(world)`,
+        "./index.py":`import random
+print(random.randint(1,3))`,
     }
 },daopy.installReadFn(daopy.builtinRead,daopy_modules))
