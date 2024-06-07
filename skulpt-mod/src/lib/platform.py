@@ -1,1 +1,2 @@
-import _sk_fail; _sk_fail._("platform")
+import _sk_fail
+_sk_fail._('platform')

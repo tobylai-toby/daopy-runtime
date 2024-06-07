@@ -1,3 +1,3 @@
-Number = (int, float, complex)
-Integral = int
-Complex = complex
+Number=int,float,complex
+Integral=int
+Complex=complex

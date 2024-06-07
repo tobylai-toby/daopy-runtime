@@ -1,5 +1,2 @@
-class NotImplementedImportError(ImportError, NotImplementedError): pass
-
-def _(name):
-    msg = "{} is not yet implemented in Skulpt".format(name)
-    raise NotImplementedImportError(msg, name=name)
+class NotImplementedImportError(ImportError,NotImplementedError):0
+def _(name):A='{} is not yet implemented in Skulpt'.format(name);raise NotImplementedImportError(A,name=name)
