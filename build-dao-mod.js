@@ -1,5 +1,10 @@
 const fs=require("fs");
 const path=require("path");
+var UglifyJS=require("uglify-js");
+
+function compress(code){
+    return UglifyJS.minify(code).code;
+}
 
 const modules={"./module/dao3/":"./dao3/"}
 const res={};
@@ -11,7 +16,7 @@ function loadModuleFiles(dir,module_){
         if(fs.statSync(fpath).isFile()){
             let modpath="./"+path.join(module_,file).replace(/\\/g,"/");
             console.log(fpath,modpath)
-            res[modpath]=fs.readFileSync(fpath,"utf-8").replace(/\r/g,"");
+            res[modpath]=compress(fs.readFileSync(fpath,"utf-8").replace(/\r/g,""));
         }
     })
 }
