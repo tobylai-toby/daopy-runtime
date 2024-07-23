@@ -225,7 +225,7 @@ Sk.abstr.setUpModuleMethods("builtins", Sk.builtins, {
         $meth: Sk.builtin.compile,
         $flags: {MinArgs: 3, MaxArgs:6},
         $textsig: "($module, /, source, filename, mode, flags=0,\n        dont_inherit=False, optimize=-1)",
-        $doc: "Compile source into a code object that can be executed by exec() or "+(()=>String.fromCharCode(10*10+1))()+"val().\n\nThe source code may represent a Python module, statement or expression.\nThe filename will be used for run-time error messages.\nThe mode must be 'exec' to compile a module, 'single' to compile a\nsingle (interactive) statement, or 'eval' to compile an expression.\nThe flags argument, if present, controls which future statements influence\nthe compilation of the code.\nThe dont_inherit argument, if true, stops the compilation inheriting\nthe effects of any future statements in effect in the code calling\ncompile; if absent or false these statements do influence the compilation,\nin addition to any features explicitly specified."
+        $doc: "Compile source into a code object that can be executed by exec() or "+Sk.global.char_e+"val().\n\nThe source code may represent a Python module, statement or expression.\nThe filename will be used for run-time error messages.\nThe mode must be 'exec' to compile a module, 'single' to compile a\nsingle (interactive) statement, or 'eval' to compile an expression.\nThe flags argument, if present, controls which future statements influence\nthe compilation of the code.\nThe dont_inherit argument, if true, stops the compilation inheriting\nthe effects of any future statements in effect in the code calling\ncompile; if absent or false these statements do influence the compilation,\nin addition to any features explicitly specified."
     },
 
     delattr: {
@@ -463,7 +463,7 @@ Sk.abstr.setUpModuleMethods("builtins", Sk.builtins, {
         $meth: Sk.builtin.repr,
         $flags: { OneArg: true },
         $textsig: "($module, obj, /)",
-        $doc: "Return the canonical string representation of the object.\n\nFor many object types, including most builtins, "+(()=>String.fromCharCode(10*10+1))()+"val(repr(obj)) == obj.",
+        $doc: "Return the canonical string representation of the object.\n\nFor many object types, including most builtins, "+Sk.global.char_e+"val(repr(obj)) == obj.",
     },
 
     round: {
