@@ -107,7 +107,7 @@ Sk.builtin.mappingproxy = Sk.abstr.buildNativeClass("mappingproxy", {
             },
             $flags: { FastCall: true },
             $textsig: null,
-            $doc: "D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.",
+            $doc:"",
         },
         keys: {
             $meth() {
@@ -115,7 +115,7 @@ Sk.builtin.mappingproxy = Sk.abstr.buildNativeClass("mappingproxy", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.keys() -> a set-like object providing a view on D's keys",
+            $doc:"",
         },
         items: {
             $meth() {
@@ -123,7 +123,7 @@ Sk.builtin.mappingproxy = Sk.abstr.buildNativeClass("mappingproxy", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.items() -> a set-like object providing a view on D's items",
+            $doc:"",
         },
         values: {
             $meth() {
@@ -131,7 +131,7 @@ Sk.builtin.mappingproxy = Sk.abstr.buildNativeClass("mappingproxy", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.values() -> a set-like object providing a view on D's values",
+            $doc:"",
         },
         copy: {
             $meth() {
@@ -139,7 +139,7 @@ Sk.builtin.mappingproxy = Sk.abstr.buildNativeClass("mappingproxy", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.copy() -> a shallow copy of D",
+            $doc:"",
         },
     },
     classmethods: Sk.generic.classGetItem,

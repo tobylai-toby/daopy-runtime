@@ -21,8 +21,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
         tp$getattr: Sk.generic.getAttr,
         tp$as_sequence_or_mapping: true,
         tp$hash: Sk.builtin.none.none$,
-        tp$doc:
-            "Built-in mutable sequence.\n\nIf no argument is given, the constructor creates a new empty list.\nThe argument must be an iterable if specified.",
+        tp$doc:"",
         tp$new: Sk.generic.new,
         tp$init(args, kwargs) {
             // this will be an Sk.builtin.list.prototype or a sk$klass.prototype that inherits from Sk.builtin.list.prototype
@@ -141,7 +140,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Return a reverse iterator over the list.",
+            $doc:"",
         },
         clear: {
             $meth() {
@@ -150,7 +149,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Remove all items from list.",
+            $doc:"",
         },
         copy: {
             $meth() {
@@ -158,7 +157,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Return a shallow copy of the list.",
+            $doc:"",
         },
         append: {
             $meth(item) {
@@ -167,7 +166,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { OneArg: true },
             $textsig: "($self, object, /)",
-            $doc: "Append object to the end of the list.",
+            $doc:"",
         },
         insert: {
             $meth(i, x) {
@@ -178,7 +177,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { MinArgs: 2, MaxArgs: 2 },
             $textsig: "($self, index, object, /)",
-            $doc: "Insert object before index.",
+            $doc:"",
         },
         extend: {
             $meth(iterable) {
@@ -196,7 +195,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { OneArg: true },
             $textsig: "($self, iterable, /)",
-            $doc: "Extend list by appending elements from the iterable.",
+            $doc:"",
         },
         pop: {
             $meth(i) {
@@ -212,7 +211,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { MinArgs: 0, MaxArgs: 1 },
             $textsig: "($self, index=-1, /)",
-            $doc: "Remove and return item at index (default last).\n\nRaises IndexError if list is empty or index is out of range.",
+            $doc:"",
         },
         remove: {
             $meth(item) {
@@ -225,7 +224,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { OneArg: true },
             $textsig: "($self, value, /)",
-            $doc: "Remove first occurrence of value.\n\nRaises ValueError if the value is not present.",
+            $doc:"",
         },
         sort: {
             $meth(args, kwargs) {
@@ -240,7 +239,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { FastCall: true },
             $textsig: "($self, /, *, key=None, reverse=False)",
-            $doc: "Stable sort *IN PLACE*.",
+            $doc:"",
         },
         index: {
             $meth(value, start, stop) {
@@ -256,7 +255,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: "($self, value, start=0, stop=sys.maxsize, /)",
-            $doc: "Return first index of value.\n\nRaises ValueError if the value is not present.",
+            $doc:"",
         },
         count: {
             $meth(item) {
@@ -271,7 +270,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { OneArg: true },
             $textsig: "($self, value, /)",
-            $doc: "Return number of occurrences of value.",
+            $doc:"",
         },
         reverse: {
             $meth() {
@@ -280,7 +279,7 @@ Sk.builtin.list = Sk.abstr.buildNativeClass("list", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Reverse *IN PLACE*.",
+            $doc:"",
         },
     },
     classmethods: Sk.generic.classGetItem,
@@ -481,7 +480,7 @@ Sk.builtin.list.py2$methods = {
             // and bool class does not exist yet. So use FastCall instead.
         },
         $textsig: "($self, cmp=None, key=None, reverse=False)",
-        $doc: "Stable sort *IN PLACE*.",
+        $doc:"",
     },
 };
 

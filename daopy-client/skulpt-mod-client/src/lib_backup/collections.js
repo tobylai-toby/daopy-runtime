@@ -81,7 +81,7 @@ function collections_mod(collections) {
         },
         slots: {
             tp$doc:
-                "defaultdict(default_factory[, ...]) --> dict with default factory\n\nThe default factory is called without arguments to produce\na new value when a key is not present, in __getitem__ only.\nA defaultdict compares equal to a dict with the same items.\nAll remaining arguments are treated the same as if they were\npassed to the dict constructor, including keyword arguments.\n",
+                "defaultdict(default_factory[, ...]) -> dict with default factory\n\nThe default factory is called without arguments to produce\na new value when a key is not present, in __getitem__ only.\nA defaultdict compares equal to a dict with the same items.\nAll remaining arguments are treated the same as if they were\npassed to the dict constructor, including keyword arguments.\n",
             tp$init(args, kwargs) {
                 const default_ = args.shift();
                 if (default_ === undefined) {
@@ -502,7 +502,7 @@ function collections_mod(collections) {
             this.v = D || new Array(2);
         },
         slots: {
-            tp$doc: "deque([iterable[, maxlen]]) --> deque object\n\nA list-like sequence optimized for data accesses near its endpoints.",
+            tp$doc: "deque([iterable[, maxlen]]) -> deque object\n\nA list-like sequence optimized for data accesses near its endpoints.",
             tp$hash: Sk.builtin.none.none$,
             tp$new: Sk.generic.new,
             tp$init(args, kwargs) {

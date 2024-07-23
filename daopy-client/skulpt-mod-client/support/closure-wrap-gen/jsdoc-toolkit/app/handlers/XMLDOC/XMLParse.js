@@ -136,7 +136,7 @@ XMLDOC.Parser.eat = function(parentNode, src)
    var reTag = new RegExp("<(!|)(\\?|--|)((.|\\s)*?)\\2>","g");
 
    // Special tag types
-   var reCommentTag = /<!--((.|\s)*?)-->/;
+   var reCommentTag = /<!--((.|\s)*?)->/;
    var rePITag = /<\?((.|\s)*?)\?>/;
 
    // A start tag (with potential empty marker)

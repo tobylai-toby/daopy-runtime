@@ -21,12 +21,7 @@ Sk.builtin.super_ = Sk.abstr.buildNativeClass("super", {
         }
     },
     slots: {
-        tp$doc:
-            "super() -> same as super(__class__, <first argument>)\n" +
-            "super(type) -> unbound super object\nsuper(type, obj) -> bound super object; requires isinstance(obj, type)\n"+
-            "super(type, type2) -> bound super object; requires issubclass(type2, type)\n"+
-            "Typical use to call a cooperative superclass method:\n"+
-            "class C(B):\n    def meth(self, arg):\n        super().meth(arg)\nThis works for class methods too:\nclass C(B):\n    @classmethod\n    def cmeth(cls, arg):\n        super().cmeth(arg)\n",
+        tp$doc:"",
         tp$new: Sk.generic.new,
         tp$init(args, kwargs) {
             Sk.abstr.checkNoKwargs("super", kwargs);
@@ -117,19 +112,19 @@ Sk.builtin.super_ = Sk.abstr.buildNativeClass("super", {
             $get() {
                 return this.type;
             },
-            $doc: "the class invoking super()",
+            $doc:"",
         },
         __self__: {
             $get() {
                 return this.obj || Sk.builtin.none.none$;
             },
-            $doc: "the instance invoking super(); may be None",
+            $doc:"",
         },
         __self_class__: {
             $get() {
                 return this.obj_type || Sk.builtin.none.none$;
             },
-            $doc: "the type of the instance invoking super(); may be None",
+            $doc:"",
         },
     },
     proto: {

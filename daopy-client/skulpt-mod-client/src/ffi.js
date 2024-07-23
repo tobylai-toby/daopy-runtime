@@ -520,7 +520,7 @@ const JsProxy = Sk.abstr.buildNativeClass("Proxy", {
         }
     },
     slots: {
-        tp$doc: "proxy for a javascript object",
+        tp$doc: "",
         tp$hash() {
             return Sk.builtin.object.prototype.tp$hash.call(this.js$wrapped);
         },

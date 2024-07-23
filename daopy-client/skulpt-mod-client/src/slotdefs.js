@@ -325,7 +325,7 @@ Sk.slots.__init__ = {
     },
     $textsig: "($self, /, *args, **kwargs)",
     $flags: { FastCall: true },
-    $doc: "Initialize self.  See help(type(self)) for accurate signature.",
+    $doc:"",
 };
 
 /**
@@ -358,7 +358,7 @@ slots.__new__ = {
     $wrapper: null, // handled separately since it's not a slot wrapper but an sk_method
     $textsig: "($self, /, *args, **kwargs)",
     $flags: { FastCall: true },
-    $doc: "Create and return a new object.",
+    $doc:"",
 };
 
 /**
@@ -385,7 +385,7 @@ slots.__call__ = {
     ,
     $textsig: "($self, /, *args, **kwargs)",
     $flags: { FastCall: true },
-    $doc: "Call self as a function.",
+    $doc:"",
 };
 
 /**
@@ -402,7 +402,7 @@ slots.__repr__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "Return repr(self).",
+    $doc:"",
 };
 
 /**
@@ -419,7 +419,7 @@ slots.__str__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "Return str(self).",
+    $doc:"",
 };
 
 var hash_slot = slotFuncNoArgsWithCheck("__hash__", Sk.builtin.checkInt, "int", (res) => typeof res.v === "number" ? res.v : res.tp$hash());
@@ -444,7 +444,7 @@ slots.__hash__ = {
     $wrapper: wrapperCallBack(wrapperCallNoArgs, (res) => new Sk.builtin.int_(res)),
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "Return hash(self).",
+    $doc:"",
 };
 
 // getters/setters/deletters
@@ -511,7 +511,7 @@ slots.__getattribute__ = {
     },
     $textsig: "($self, name, /)",
     $flags: { OneArg: true },
-    $doc: "Return getattr(self, name).",
+    $doc:"",
 };
 
 slots.__getattr__ = {
@@ -521,7 +521,7 @@ slots.__getattr__ = {
     $wrapper: null,
     $textsig: "($self, name, /)",
     $flags: { OneArg: true },
-    $doc: "Return getattr(self, name).",
+    $doc:"",
 };
 
 
@@ -561,7 +561,7 @@ slots.__setattr__ = {
     },
     $textsig: "($self, name, value, /)",
     $flags: { MinArgs: 2, MaxArgs: 2 },
-    $doc: "Implement setattr(self, name, value).",
+    $doc:"",
 };
 
 slots.__delattr__ = {
@@ -576,7 +576,7 @@ slots.__delattr__ = {
     },
     $textsig: "($self, name, /)",
     $flags: { OneArg: true },
-    $doc: "Implement delattr(self, name).",
+    $doc:"",
 };
 
 /**
@@ -622,7 +622,7 @@ slots.__get__ = {
     },
     $textsig: "($self, instance, owner, /)",
     $flags: { MinArgs: 2, MaxArgs: 2 },
-    $doc: "Return an attribute of instance, which is of type owner.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -642,7 +642,7 @@ slots.__set__ = {
     $wrapper: wrapperSet,
     $textsig: "($self, instance, value, /)",
     $flags: { MinArgs: 2, MaxArgs: 2 },
-    $doc: "Set an attribute of instance to value.",
+    $doc:"",
 };
 
 slots.__delete__ = {
@@ -652,7 +652,7 @@ slots.__delete__ = {
     $wrapper: wrapperDel,
     $textsig: "($self, instance, /)",
     $flags: { OneArg: true },
-    $doc: "Delete an attribute of instance.",
+    $doc:"",
 };
 
 /**
@@ -683,7 +683,7 @@ slots.__eq__ = {
     $wrapper: wrapperRichCompare,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self==value.",
+    $doc:"",
 };
 
 /**
@@ -700,7 +700,7 @@ slots.__ge__ = {
     $wrapper: wrapperRichCompare,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self>=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -716,7 +716,7 @@ slots.__gt__ = {
     $wrapper: wrapperRichCompare,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self>value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -732,7 +732,7 @@ slots.__le__ = {
     $wrapper: wrapperRichCompare,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self<=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -748,7 +748,7 @@ slots.__lt__ = {
     $wrapper: wrapperRichCompare,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self<value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -764,7 +764,7 @@ slots.__ne__ = {
     $wrapper: wrapperRichCompare,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self!=value.",
+    $doc:"",
 };
 
 // iters
@@ -784,7 +784,7 @@ slots.__iter__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "Implement iter(self).",
+    $doc:"",
 };
 
 /**
@@ -835,7 +835,7 @@ slots.__next__ = {
     },
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "Implement next(self).",
+    $doc:"",
 };
 
 // sequence and mapping
@@ -903,7 +903,7 @@ slots.__len__ = {
     $wrapper: wrapperCallBack(wrapperCallNoArgsSuspend, (res) => new Sk.builtin.int_(res), true),
     $flags: { NoArgs: true },
     $textsig: "($self, /)",
-    $doc: "Return len(self).",
+    $doc:"",
 };
 
 /**
@@ -934,7 +934,7 @@ slots.__contains__ = {
     $wrapper: wrapperCallBack(wrapperCallOneArgSuspend, (res) => new Sk.builtin.bool(res), true),
     $textsig: "($self, key, /)",
     $flags: { OneArg: true },
-    $doc: "Return key in self.",
+    $doc:"",
 };
 
 /**
@@ -960,7 +960,7 @@ slots.__getitem__ = {
     $wrapper: wrapperCallOneArgSuspend,
     $textsig: "($self, key, /)",
     $flags: { OneArg: true },
-    $doc: "Return self[key].",
+    $doc:"",
 };
 
 /**
@@ -983,7 +983,7 @@ slots.__setitem__ = {
     $wrapper: wrapperSet,
     $textsig: "($self, key, value, /)",
     $flags: { MinArgs: 2, MaxArgs: 2 },
-    $doc: "Set self[key] to value.",
+    $doc:"",
 };
 
 slots.__delitem__ = {
@@ -993,7 +993,7 @@ slots.__delitem__ = {
     $wrapper: wrapperDel,
     $textsig: "($self, key, /)",
     $flags: { OneArg: true },
-    $doc: "Delete self[key].",
+    $doc:"",
 };
 
 // number slots
@@ -1033,7 +1033,7 @@ slots.__add__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self+value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1051,7 +1051,7 @@ slots.__radd__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value+self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1069,7 +1069,7 @@ slots.__iadd__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self+=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1085,7 +1085,7 @@ slots.__sub__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self-value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1100,7 +1100,7 @@ slots.__rsub__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value-self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1115,7 +1115,7 @@ slots.__imul__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self*=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1130,7 +1130,7 @@ slots.__mul__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self*value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1145,7 +1145,7 @@ slots.__rmul__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value*self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1160,7 +1160,7 @@ slots.__isub__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self-=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1175,7 +1175,7 @@ slots.__mod__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self%value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1190,7 +1190,7 @@ slots.__rmod__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value%self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1205,7 +1205,7 @@ slots.__imod__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement value%=self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1220,7 +1220,7 @@ slots.__divmod__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return divmod(self, value).",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1235,7 +1235,7 @@ slots.__rdivmod__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return divmod(value, self)",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1250,7 +1250,7 @@ slots.__pos__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "+self",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1265,7 +1265,7 @@ slots.__neg__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "-self",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1280,7 +1280,7 @@ slots.__abs__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "abs(self)",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1296,7 +1296,7 @@ slots.__bool__ = {
     $wrapper: wrapperCallBack(wrapperCallNoArgs, (res) => new Sk.builtin.bool(res)),
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "self != 0",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1311,7 +1311,7 @@ slots.__invert__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "~self",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1326,7 +1326,7 @@ slots.__lshift__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self<<value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1341,7 +1341,7 @@ slots.__rlshift__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value<<self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1356,7 +1356,7 @@ slots.__rshift__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self>>value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1371,7 +1371,7 @@ slots.__rrshift__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value>>self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1386,7 +1386,7 @@ slots.__ilshift__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self<<=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1401,7 +1401,7 @@ slots.__irshift__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self=>>value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1416,7 +1416,7 @@ slots.__and__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self&value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1431,7 +1431,7 @@ slots.__rand__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value&self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1446,7 +1446,7 @@ slots.__iand__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self&=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1461,7 +1461,7 @@ slots.__xor__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self^value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1476,7 +1476,7 @@ slots.__rxor__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value^self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1491,7 +1491,7 @@ slots.__ixor__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self^=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1506,7 +1506,7 @@ slots.__or__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self|value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1521,7 +1521,7 @@ slots.__ror__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value|self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1536,7 +1536,7 @@ slots.__ior__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self|=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1551,7 +1551,7 @@ slots.__int__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "int(self)",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1566,7 +1566,7 @@ slots.__float__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "float(self)",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1581,7 +1581,7 @@ slots.__floordiv__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self//value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1596,7 +1596,7 @@ slots.__rfloordiv__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value//self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1611,7 +1611,7 @@ slots.__ifloordiv__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self//=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1626,7 +1626,7 @@ slots.__truediv__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self/value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1641,7 +1641,7 @@ slots.__rtruediv__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value/self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1656,7 +1656,7 @@ slots.__itruediv__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self/=value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1671,7 +1671,7 @@ slots.__index__ = {
     $wrapper: wrapperCallBack(wrapperCallNoArgs, (res) => new Sk.builtin.int_(res)),
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "Return self converted to an integer, if self is suitable for use as an index into a list.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1695,7 +1695,7 @@ slots.__pow__ = {
     $wrapper: wrapperCallTernary,
     $textsig: "($self, value, mod=None, /)",
     $flags: { MinArgs: 1, MaxArgs: 2 },
-    $doc: "Return pow(self, value, mod).",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1710,7 +1710,7 @@ slots.__rpow__ = {
     $wrapper: wrapperCallTernary,
     $textsig: "($self, value, mod=None, /)",
     $flags: { MinArgs: 1, MaxArgs: 2 },
-    $doc: "Return pow(value, self, mod).",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1725,7 +1725,7 @@ slots.__ipow__ = {
     $wrapper: wrapperCallTernary,
     $textsig: "($self, value, mod=None, /)",
     $flags: { MinArgs: 1, MaxArgs: 2 },
-    $doc: "Implement **=",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1740,7 +1740,7 @@ slots.__matmul__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return self@value.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1755,7 +1755,7 @@ slots.__rmatmul__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Return value@self.",
+    $doc:"",
 };
 /**
  * @memberof Sk.slots
@@ -1770,7 +1770,7 @@ slots.__imatmul__ = {
     $wrapper: wrapperCallOneArg,
     $textsig: "($self, value, /)",
     $flags: { OneArg: true },
-    $doc: "Implement self@=value.",
+    $doc:"",
 };
 
 // py2 ONLY slots
@@ -1781,7 +1781,7 @@ slots.__long__ = {
     $wrapper: wrapperCallNoArgs,
     $textsig: "($self, /)",
     $flags: { NoArgs: true },
-    $doc: "int(self)",
+    $doc:"",
 };
 
 var py3$slots;
@@ -1801,7 +1801,7 @@ var py2$slots = {
         $wrapper: wrapperCallBack(wrapperCallNoArgs, (res) => new Sk.builtin.bool(res)),
         $textsig: "($self, /)",
         $flags: { NoArgs: true },
-        $doc: "x.__nonzero__() <==> x != 0",
+        $doc:"",
     },
     __div__: {
         $name: "__div__",
@@ -1810,7 +1810,7 @@ var py2$slots = {
         $wrapper: wrapperCallOneArg,
         $textsig: "($self, other/)",
         $flags: { OneArg: true },
-        $doc: "x.__div__(y) <==> x/y",
+        $doc:"",
     },
     __rdiv__: {
         $name: "__rdiv__",
@@ -1819,7 +1819,7 @@ var py2$slots = {
         $wrapper: wrapperCallOneArg,
         $textsig: "($self, other/)",
         $flags: { OneArg: true },
-        $doc: "x.__rdiv__(y) <==> x/y",
+        $doc:"",
     },
     __idiv__: {
         $name: "__idiv__",
@@ -1828,7 +1828,7 @@ var py2$slots = {
         $wrapper: wrapperCallOneArg,
         $textsig: "($self, other/)",
         $flags: { OneArg: true },
-        $doc: "implement self /= other",
+        $doc:"",
     },
 };
 /**

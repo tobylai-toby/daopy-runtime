@@ -26,7 +26,7 @@ Sk.builtin.bool = Sk.abstr.buildNativeClass("bool", {
     base: Sk.builtin.int_,
     slots: {
         tp$doc:
-            "bool(x) -> bool\n\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.",
+            "",
         tp$new(args, kwargs) {
             Sk.abstr.checkNoKwargs("bool", kwargs);
             Sk.abstr.checkArgsLen("bool", args, 0, 1);

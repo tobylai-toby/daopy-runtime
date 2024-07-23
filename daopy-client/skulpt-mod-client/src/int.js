@@ -36,7 +36,7 @@ Sk.builtin.int_ = Sk.abstr.buildNativeClass("int", {
     },
     slots: /** @lends {Sk.builtin.int_.prototype}*/ {
         tp$as_number: true,
-        tp$doc: "int(x=0) -> integer\nint(x, base=10) -> integer\n\nConvert a number or string to an integer, or return 0 if no arguments\nare given.  If x is a number, return x.__int__().  For floating point\nnumbers, this truncates towards zero.\n\nIf x is not a number or if base is given, then x must be a string,\nbytes, or bytearray instance representing an integer literal in the\ngiven base.  The literal can be preceded by '+' or '-' and be surrounded\nby whitespace.  The base defaults to 10.  Valid bases are 0 and 2-36.\nBase 0 means to interpret the base from the string as an integer literal.\n>>> int('0b100', base=0)\n4",
+        tp$doc:"",
         $r() {
             return new Sk.builtin.str(this.v.toString());
         },
@@ -220,13 +220,13 @@ Sk.builtin.int_ = Sk.abstr.buildNativeClass("int", {
     getsets: /** @lends {Sk.builtin.int_.prototype}*/ {
         real: {
             $get: cloneSelf,
-            $doc: "the real part of a complex number",
+            $doc:"",
         },
         imag: {
             $get() {
                 return INT_ZERO;
             },
-            $doc: "the imaginary part of a complex number",
+            $doc:"",
         },
         numerator: {
             $get: cloneSelf,
@@ -283,7 +283,7 @@ Sk.builtin.int_ = Sk.abstr.buildNativeClass("int", {
             $meth: cloneSelf,
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Returns self, the complex conjugate of any int.",
+            $doc:"",
         },
         bit_length: {
             $meth() {
@@ -296,7 +296,7 @@ Sk.builtin.int_ = Sk.abstr.buildNativeClass("int", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Number of bits necessary to represent self in binary.\n\n>>> bin(37)\n'0b100101'\n>>> (37).bit_length()\n6",
+            $doc:"",
         },
         to_bytes: {
             $meth(args, kws) {
@@ -351,25 +351,25 @@ Sk.builtin.int_ = Sk.abstr.buildNativeClass("int", {
             },
             $flags: { FastCall: true },
             $textsig: "($self, /, length, byteorder, *, signed=False)",
-            $doc: "Return an array of bytes representing an integer.\n\n  length\n    Length of bytes object to use.  An OverflowError is raised if the\n    integer is not representable with the given number of bytes.\n  byteorder\n    The byte order used to represent the integer.  If byteorder is 'big',\n    the most significant byte is at the beginning of the byte array.  If\n    byteorder is 'little', the most significant byte is at the end of the\n    byte array.  To request the native byte order of the host system, use\n    `sys.byteorder' as the byte order value.\n  signed\n    Determines whether two's complement is used to represent the integer.\n    If signed is False and a negative integer is given, an OverflowError\n    is raised.",
+            $doc:"",
         },
         __trunc__: {
             $meth: cloneSelf,
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Truncating an Integral returns itself.",
+            $doc:"",
         },
         __floor__: {
             $meth: cloneSelf,
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Flooring an Integral returns itself.",
+            $doc:"",
         },
         __ceil__: {
             $meth: cloneSelf,
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Ceiling of an Integral returns itself.",
+            $doc:"",
         },
         __round__: {
             $meth(ndigits) {
@@ -377,7 +377,7 @@ Sk.builtin.int_ = Sk.abstr.buildNativeClass("int", {
             },
             $flags: { MinArgs: 0, MaxArgs: 1 },
             $textsig: null,
-            $doc: "Rounding an Integral returns itself.\nRounding with an ndigits argument also returns an integer.",
+            $doc:"",
         },
         __getnewargs__: {
             $meth() {

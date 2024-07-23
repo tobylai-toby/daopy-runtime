@@ -1,4 +1,4 @@
-<project default="clean-build"><!-- use this build script if you are stuck with ant version 1.4 -->
+<project default="clean-build"><!-- use this build script if you are stuck with ant version 1.4 ->
    <target name="clean">
         <delete dir="build"/>
     </target>

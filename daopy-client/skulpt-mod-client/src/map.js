@@ -25,8 +25,7 @@ Sk.builtin.map_ = Sk.abstr.buildIteratorClass("map", {
         return canSuspend ? ret : Sk.misceval.retryOptionalSuspensionOrThrow(ret);
     },
     slots: {
-        tp$doc:
-            "map(func, *iterables) --> map object\n\nMake an iterator that computes the function using arguments from\neach of the iterables.  Stops when the shortest iterable is exhausted.",
+        tp$doc:"",
         tp$new(args, kwargs) {
             if (this === Sk.builtin.map_.prototype) {
                 Sk.abstr.checkNoKwargs("map", kwargs);

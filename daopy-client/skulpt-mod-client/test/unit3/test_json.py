@@ -392,7 +392,7 @@ JSON1 = r'''
         "address": "50 St. James Street",
         "url": "http://www.JSON.org/",
         "comment": "// /* <!-- --",
-        "# -- --> */": " ",
+        "# -- -> */": " ",
         " s p a c e d " :[1,2 , 3
 
 ,

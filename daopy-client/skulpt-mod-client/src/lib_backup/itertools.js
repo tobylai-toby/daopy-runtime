@@ -28,7 +28,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "accumulate(iterable[, func, initial]) --> accumulate object\n\nReturn series of accumulated sums (or other binary function results).",
+                "accumulate(iterable[, func, initial]) -> accumulate object\n\nReturn series of accumulated sums (or other binary function results).",
             tp$new(args, kwargs) {
                 // initial is a keyword only argument;
                 Sk.abstr.checkArgsLen("accumulate", args, 0, 2);
@@ -83,7 +83,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "chain(*iterables) --> chain object\n\nReturn a chain object whose .__next__() method returns elements from the\nfirst iterable until it is exhausted, then elements from the next\niterable, until all of the iterables are exhausted.",
+                "chain(*iterables) -> chain object\n\nReturn a chain object whose .__next__() method returns elements from the\nfirst iterable until it is exhausted, then elements from the next\niterable, until all of the iterables are exhausted.",
             tp$new(args, kwargs) {
                 Sk.abstr.checkNoKwargs("chain", kwargs);
                 args = new Sk.builtin.tuple(args.slice(0)).tp$iter();
@@ -104,7 +104,7 @@ var $builtinmodule = function (name) {
                 },
                 $flags: { OneArg: true },
                 $doc:
-                    "chain.from_iterable(iterable) --> chain object\n\nAlternate chain() constructor taking a single iterable argument\nthat evaluates lazily.",
+                    "chain.from_iterable(iterable) -> chain object\n\nAlternate chain() constructor taking a single iterable argument\nthat evaluates lazily.",
                 $textsig: null,
             },
         }, Sk.generic.classGetItem),
@@ -169,7 +169,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "combinations(iterable, r) --> combinations object\n\nReturn successive r-length combinations of elements in the iterable.\n\ncombinations(range(4), 3) --> (0,1,2), (0,1,3), (0,2,3), (1,2,3)",
+                "combinations(iterable, r) -> combinations object\n\nReturn successive r-length combinations of elements in the iterable.\n\ncombinations(range(4), 3) -> (0,1,2), (0,1,3), (0,2,3), (1,2,3)",
             tp$new(args, kwargs) {
                 return combinationsNew.call(this, mod.combinations.prototype, args, kwargs);
             },
@@ -213,7 +213,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "combinations_with_replacement(iterable, r) --> combinations_with_replacement object\n\nReturn successive r-length combinations of elements in the iterable\nallowing individual elements to have successive repeats.\ncombinations_with_replacement('ABC', 2) --> AA AB AC BB BC CC",
+                "combinations_with_replacement(iterable, r) -> combinations_with_replacement object\n\nReturn successive r-length combinations of elements in the iterable\nallowing individual elements to have successive repeats.\ncombinations_with_replacement('ABC', 2) -> AA AB AC BB BC CC",
             tp$new(args, kwargs) {
                 return combinationsNew.call(this, mod.combinations_with_replacement.prototype, args, kwargs);
             },
@@ -237,7 +237,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "compress(data, selectors) --> iterator over selected data\n\nReturn data elements corresponding to true selector elements.\nForms a shorter iterator from selected data elements using the\nselectors to choose the data elements.",
+                "compress(data, selectors) -> iterator over selected data\n\nReturn data elements corresponding to true selector elements.\nForms a shorter iterator from selected data elements using the\nselectors to choose the data elements.",
             tp$new(args, kwargs) {
                 let data, selectors;
                 [data, selectors] = Sk.abstr.copyKeywordsToNamedArgs("compress", ["data", "selectors"], args, kwargs, []);
@@ -266,7 +266,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "count(start=0, step=1) --> count object\n\nReturn a count object whose .__next__() method returns consecutive values.\nEquivalent to:\n\n    def count(firstval=0, step=1):\n        x = firstval\n        while 1:\n            yield x\n            x += step\n",
+                "count(start=0, step=1) -> count object\n\nReturn a count object whose .__next__() method returns consecutive values.\nEquivalent to:\n\n    def count(firstval=0, step=1):\n        x = firstval\n        while 1:\n            yield x\n            x += step\n",
             tp$new(args, kwargs) {
                 const [start, step] = Sk.abstr.copyKeywordsToNamedArgs("count", ["start", "step"], args, kwargs, [
                     new Sk.builtin.int_(0),
@@ -324,7 +324,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "cycle(iterable) --> cycle object\n\nReturn elements from the iterable until it is exhausted.\nThen repeat the sequence indefinitely.",
+                "cycle(iterable) -> cycle object\n\nReturn elements from the iterable until it is exhausted.\nThen repeat the sequence indefinitely.",
             tp$new(args, kwargs) {
                 Sk.abstr.checkOneArg("cycle", args, kwargs);
                 const iter = Sk.abstr.iter(args[0]);
@@ -359,7 +359,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "dropwhile(predicate, iterable) --> dropwhile object\n\nDrop items from the iterable while predicate(item) is true.\nAfterwards, return every element until the iterable is exhausted.",
+                "dropwhile(predicate, iterable) -> dropwhile object\n\nDrop items from the iterable while predicate(item) is true.\nAfterwards, return every element until the iterable is exhausted.",
             tp$new(args, kwargs) {
                 Sk.abstr.checkNoKwargs("dropwhile", kwargs);
                 Sk.abstr.checkArgsLen("dropwhile", args, 2, 2);
@@ -398,7 +398,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "filterfalse(function or None, sequence) --> filterfalse object\n\nReturn those items of sequence for which function(item) is false.\nIf function is None, return the items that are false.",
+                "filterfalse(function or None, sequence) -> filterfalse object\n\nReturn those items of sequence for which function(item) is false.\nIf function is None, return the items that are false.",
             tp$new(args, kwargs) {
                 Sk.abstr.checkNoKwargs("filterfalse", kwargs);
                 Sk.abstr.checkArgsLen("filterfalse", args, 2, 2);
@@ -520,7 +520,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "islice(iterable, stop) --> islice object\nislice(iterable, start, stop[, step]) --> islice object\n\nReturn an iterator whose next() method returns selected values from an\niterable.  If start is specified, will skip all preceding elements;\notherwise, start defaults to zero.  Step defaults to one.  If\nspecified as another value, step determines how many values are \nskipped between successive calls.  Works like a slice() on a list\nbut returns an iterator.",
+                "islice(iterable, stop) -> islice object\nislice(iterable, start, stop[, step]) -> islice object\n\nReturn an iterator whose next() method returns selected values from an\niterable.  If start is specified, will skip all preceding elements;\notherwise, start defaults to zero.  Step defaults to one.  If\nspecified as another value, step determines how many values are \nskipped between successive calls.  Works like a slice() on a list\nbut returns an iterator.",
             tp$new(args, kwargs) {
                 Sk.abstr.checkNoKwargs("islice", kwargs);
                 Sk.abstr.checkArgsLen("islice", args, 2, 4);
@@ -612,7 +612,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "permutations(iterable[, r]) --> permutations object\n\nReturn successive r-length permutations of elements in the iterable.\n\npermutations(range(3), 2) --> (0,1), (0,2), (1,0), (1,2), (2,0), (2,1)",
+                "permutations(iterable[, r]) -> permutations object\n\nReturn successive r-length permutations of elements in the iterable.\n\npermutations(range(3), 2) -> (0,1), (0,2), (1,0), (1,2), (2,0), (2,1)",
             tp$new(args, kwargs) {
                 let iterable, r;
                 [iterable, r] = Sk.abstr.copyKeywordsToNamedArgs("permutations", ["iterable", "r"], args, kwargs, [Sk.builtin.none.none$]);
@@ -669,7 +669,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "product(*iterables, repeat=1) --> product object\n\nCartesian product of input iterables.  Equivalent to nested for-loops.\n\nFor example, product(A, B) returns the same as:  ((x,y) for x in A for y in B).\nThe leftmost iterators are in the outermost for-loop, so the output tuples\ncycle in a manner similar to an odometer (with the rightmost element changing\non every iteration).\n\nTo compute the product of an iterable with itself, specify the number\nof repetitions with the optional repeat keyword argument. For example,\nproduct(A, repeat=4) means the same as product(A, A, A, A).\n\nproduct('ab', range(3)) --> ('a',0) ('a',1) ('a',2) ('b',0) ('b',1) ('b',2)\nproduct((0,1), (0,1), (0,1)) --> (0,0,0) (0,0,1) (0,1,0) (0,1,1) (1,0,0) ...",
+                "product(*iterables, repeat=1) -> product object\n\nCartesian product of input iterables.  Equivalent to nested for-loops.\n\nFor example, product(A, B) returns the same as:  ((x,y) for x in A for y in B).\nThe leftmost iterators are in the outermost for-loop, so the output tuples\ncycle in a manner similar to an odometer (with the rightmost element changing\non every iteration).\n\nTo compute the product of an iterable with itself, specify the number\nof repetitions with the optional repeat keyword argument. For example,\nproduct(A, repeat=4) means the same as product(A, A, A, A).\n\nproduct('ab', range(3)) -> ('a',0) ('a',1) ('a',2) ('b',0) ('b',1) ('b',2)\nproduct((0,1), (0,1), (0,1)) -> (0,0,0) (0,0,1) (0,1,0) (0,1,1) (1,0,0) ...",
             tp$new(args, kwargs) {
                 let [repeat] = Sk.abstr.copyKeywordsToNamedArgs("product", ["repeat"], [], kwargs, [new Sk.builtin.int_(1)]);
                 repeat = Sk.misceval.asIndexSized(repeat, Sk.builtin.OverFlowError);
@@ -794,7 +794,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "takewhile(predicate, iterable) --> takewhile object\n\nReturn successive entries from an iterable as long as the \npredicate evaluates to true for each entry.",
+                "takewhile(predicate, iterable) -> takewhile object\n\nReturn successive entries from an iterable as long as the \npredicate evaluates to true for each entry.",
             tp$new(args, kwargs) {
                 Sk.abstr.checkNoKwargs("takewhile", kwargs);
                 Sk.abstr.checkArgsLen("takewhile", args, 2, 2);
@@ -843,7 +843,7 @@ var $builtinmodule = function (name) {
         },
         slots: {
             tp$doc:
-                "zip_longest(iter1 [,iter2 [...]], [fillvalue=None]) --> zip_longest object\n\nReturn a zip_longest object whose .__next__() method returns a tuple where\nthe i-th element comes from the i-th iterable argument.  The .__next__()\nmethod continues until the longest iterable in the argument sequence\nis exhausted and then it raises StopIteration.  When the shorter iterables\nare exhausted, the fillvalue is substituted in their place.  The fillvalue\ndefaults to None or can be specified by a keyword argument.\n",
+                "zip_longest(iter1 [,iter2 [...]], [fillvalue=None]) -> zip_longest object\n\nReturn a zip_longest object whose .__next__() method returns a tuple where\nthe i-th element comes from the i-th iterable argument.  The .__next__()\nmethod continues until the longest iterable in the argument sequence\nis exhausted and then it raises StopIteration.  When the shorter iterables\nare exhausted, the fillvalue is substituted in their place.  The fillvalue\ndefaults to None or can be specified by a keyword argument.\n",
             tp$new(args, kwargs) {
                 const [fillvalue] = Sk.abstr.copyKeywordsToNamedArgs("zip_longest", ["fillvalue"], [], kwargs, [Sk.builtin.none.none$]);
                 const iterables = [];

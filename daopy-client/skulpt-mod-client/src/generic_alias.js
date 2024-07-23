@@ -33,7 +33,7 @@ Sk.builtin.GenericAlias = Sk.abstr.buildNativeClass("types.GenericAlias", {
             }
             return new Sk.builtin.str(origin_repr + "[" + arg_repr + "]");
         },
-        tp$doc: "Represent a PEP 585 generic type\n\nE.g. for t = list[int], t.origin is list and t.args is (int,).",
+        tp$doc:"",
         tp$hash() {
             const h0 = Sk.abstr.objectHash(this.$origin);
             if (h0 == -1) {
@@ -131,7 +131,7 @@ Sk.builtin.GenericAlias = Sk.abstr.buildNativeClass("types.GenericAlias", {
                 }
                 return this.$params;
             },
-            $doc: "Type variables in the GenericAlias.",
+            $doc:"",
         },
         __origin__: {
             $get() {

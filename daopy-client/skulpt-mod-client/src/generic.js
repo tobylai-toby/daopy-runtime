@@ -278,7 +278,7 @@ Sk.generic.getSetDict = {
             throw new Sk.builtin.TypeError("__dict__ must be set to a dictionary, not a '" + Sk.abstr.typeName(value) + "'");
         }
     },
-    $doc: "dictionary for instance variables (if defined)",
+    $doc:"",
     $name: "__dict__",
 };
 

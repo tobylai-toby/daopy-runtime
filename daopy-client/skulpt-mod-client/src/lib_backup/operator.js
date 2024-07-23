@@ -156,7 +156,7 @@ function $builtinmodule(name) {
                 const ret = this.attrs.map((attrs) => attrs.reduce((obj, attr) => getAttr(obj, attr), obj));
                 return new pyTuple(ret);
             },
-            tp$doc: "attrgetter(attr, ...) --> attrgetter object\n\nReturn a callable object that fetches the given attribute(s) from its operand.\nAfter f = attrgetter('name'), the call f(r) returns r.name.\nAfter g = attrgetter('name', 'date'), the call g(r) returns (r.name, r.date).\nAfter h = attrgetter('name.first', 'name.last'), the call h(r) returns\n(r.name.first, r.name.last).",
+            tp$doc: "attrgetter(attr, ...) -> attrgetter object\n\nReturn a callable object that fetches the given attribute(s) from its operand.\nAfter f = attrgetter('name'), the call f(r) returns r.name.\nAfter g = attrgetter('name', 'date'), the call g(r) returns (r.name, r.date).\nAfter h = attrgetter('name.first', 'name.last'), the call h(r) returns\n(r.name.first, r.name.last).",
             $r() {
                 if (this.in$repr) {
                     return new pyStr(this.tp$name + "(...)");
@@ -193,7 +193,7 @@ function $builtinmodule(name) {
                     pyCallOrSuspend(method, this.args, this.kwargs)
                 );
             },
-            tp$doc: "methodcaller(name, ...) --> methodcaller object\n\nReturn a callable object that calls the given method on its operand.\nAfter f = methodcaller('name'), the call f(r) returns r.name().\nAfter g = methodcaller('name', 'date', foo=1), the call g(r) returns\nr.name('date', foo=1).",
+            tp$doc: "methodcaller(name, ...) -> methodcaller object\n\nReturn a callable object that calls the given method on its operand.\nAfter f = methodcaller('name'), the call f(r) returns r.name().\nAfter g = methodcaller('name', 'date', foo=1), the call g(r) returns\nr.name('date', foo=1).",
             $r() {
                 if (this.in$repr) {
                     return new pyStr(this.tp$name + "(...)");

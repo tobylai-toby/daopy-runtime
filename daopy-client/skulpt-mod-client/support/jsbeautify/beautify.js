@@ -515,13 +515,13 @@ function js_beautify(js_source_text, options) {
             return ['<!--', 'TK_COMMENT'];
         }
 
-        if (c === '-' && flags.in_html_comment && input.substring(parser_pos - 1, parser_pos + 2) === '-->') {
+        if (c === '-' && flags.in_html_comment && input.substring(parser_pos - 1, parser_pos + 2) === '->') {
             flags.in_html_comment = false;
             parser_pos += 2;
             if (wanted_newline) {
                 print_newline();
             }
-            return ['-->', 'TK_COMMENT'];
+            return ['->', 'TK_COMMENT'];
         }
 
         if (in_array(c, punct)) {

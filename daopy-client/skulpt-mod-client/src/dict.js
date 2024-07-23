@@ -42,8 +42,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
         tp$as_sequence_or_mapping: true,
         tp$as_number: true,
         tp$hash: Sk.builtin.none.none$,
-        tp$doc:
-            "dict() -> new empty dictionary\ndict(mapping) -> new dictionary initialized from a mapping object's\n    (key, value) pairs\ndict(iterable) -> new dictionary initialized as if via:\n    d = {}\n    for k, v in iterable:\n        d[k] = v\ndict(**kwargs) -> new dictionary initialized with the name=value pairs\n    in the keyword argument list.  For example:  dict(one=1, two=2)",
+        tp$doc:"",
         $r() {
             if (this.in$repr) {
                 // prevents recursively calling repr;
@@ -139,7 +138,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Return a reverse iterator over the dict keys.",
+            $doc:"",
         },
         get: {
             $meth(key, d) {
@@ -147,7 +146,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: "($self, key, default=None, /)",
-            $doc: "Return the value for key if key is in the dictionary, else default.",
+            $doc:"",
         },
         setdefault: {
             $meth(key, default_) {
@@ -180,8 +179,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: "($self, key, default=None, /)",
-            $doc:
-                "Insert key with a value of default if key is not in the dictionary.\n\nReturn the value for key if key is in the dictionary, else default.",
+            $doc:"",
         },
         pop: {
             $meth(key, d) {
@@ -197,8 +195,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: null,
-            $doc:
-                "D.pop(k[,d]) -> v, remove specified key and return the corresponding value.\nIf key is not found, d is returned if given, otherwise KeyError is raised",
+            $doc:"",
         },
         popitem: {
             $meth() {
@@ -213,7 +210,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.popitem() -> (k, v), remove and return some (key, value) pair as a\n2-tuple; but raise KeyError if D is empty.",
+            $doc:"",
         },
         keys: {
             $meth() {
@@ -221,7 +218,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.keys() -> a set-like object providing a view on D's keys",
+            $doc:"",
         },
         items: {
             $meth() {
@@ -229,7 +226,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.items() -> a set-like object providing a view on D's items",
+            $doc:"",
         },
         values: {
             $meth() {
@@ -237,7 +234,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.values() -> an object providing a view on D's values",
+            $doc:"",
         },
         update: {
             $meth(args, kwargs) {
@@ -245,8 +242,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { FastCall: true },
             $textsig: null,
-            $doc:
-                "D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.\nIf E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]\nIf E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v\nIn either case, this is followed by: for k in F:  D[k] = F[k]",
+            $doc:"",
         },
         clear: {
             $meth() {
@@ -255,7 +251,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.clear() -> None.  Remove all items from D.",
+            $doc:"",
         },
         copy: {
             $meth() {
@@ -263,7 +259,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "D.copy() -> a shallow copy of D",
+            $doc:"",
         },
     },
     classmethods: /**@lends {Sk.builtin.dict.prototype}*/ Object.assign({
@@ -284,7 +280,7 @@ Sk.builtin.dict = Sk.abstr.buildNativeClass("dict", {
             },
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: "($type, iterable, value=None, /)",
-            $doc: "Create a new dictionary with keys from iterable and values set to value.",
+            $doc:"",
         },
     }, Sk.generic.classGetItem),
     proto: /**@lends {Sk.builtin.dict.prototype}*/ {
@@ -780,13 +776,13 @@ function buildDictView(typename, slots, reverse_method) {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Return True if the view and the given iterable have a null intersection.",
+            $doc:"",
         },
         __reversed__: {
             $meth: reverse_method,
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Return a reverse iterator over the dict keys.",
+            $doc:"",
         },
     };
     options.flags = {
@@ -933,7 +929,7 @@ Sk.builtin.dict.py2$methods = {
         $meth(k) {
             return new Sk.builtin.bool(this.sq$contains(k));
         },
-        $doc: "D.has_key(k) -> True if D has a key k, else False",
+        $doc:"",
     },
     keys: {
         $name: "keys",
@@ -942,7 +938,7 @@ Sk.builtin.dict.py2$methods = {
         },
         $flags: { NoArgs: true },
         $textsig: null,
-        $doc: "D.keys() -> a set-like object providing a view on D's keys",
+        $doc:"",
     },
     items: {
         $name: "items",
@@ -951,7 +947,7 @@ Sk.builtin.dict.py2$methods = {
         },
         $flags: { NoArgs: true },
         $textsig: null,
-        $doc: "D.items() -> a set-like object providing a view on D's items",
+        $doc:"",
     },
     values: {
         $name: "values",
@@ -960,6 +956,6 @@ Sk.builtin.dict.py2$methods = {
         },
         $flags: { NoArgs: true },
         $textsig: null,
-        $doc: "D.values() -> an object providing a view on D's values",
+        $doc:"",
     },
 };

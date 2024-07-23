@@ -69,8 +69,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
     },
     slots: /**@lends {Sk.builtin.bytes.prototype} */ {
         tp$getattr: Sk.generic.getAttr,
-        tp$doc:
-            "bytes(iterable_of_ints) -> bytes\nbytes(string, encoding[, errors]) -> bytes\nbytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer\nbytes(int) -> bytes object of size given by the parameter initialized with null bytes\nbytes() -> empty bytes object\n\nConstruct an immutable array of bytes from:\n  - an iterable yielding integers in range(256)\n  - a text string encoded using the specified encoding\n  - any object implementing the buffer API.\n  - an integer",
+        tp$doc:"",
         tp$new(args, kwargs) {
             if (this !== Sk.builtin.bytes.prototype) {
                 return this.$subtype_new(args, kwargs);
@@ -371,14 +370,13 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.capitalize() -> copy of B\n\nReturn a copy of B with only its first character capitalized (ASCII)\nand the rest lower-cased.",
+            $doc:"",
         },
         center: {
             $meth: mkJust("center", false, true),
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: null,
-            $doc:
-                "B.center(width[, fillchar]) -> copy of B\n\nReturn B centered in a string of length width.  Padding is\ndone using the specified fill character (default is a space).",
+            $doc:"",
         },
         count: {
             $meth(tgt, start, end) {
@@ -404,15 +402,13 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.count(sub[, start[, end]]) -> int\n\nReturn the number of non-overlapping occurrences of subsection sub in\nbytes B[start:end].  Optional arguments start and end are interpreted\nas in slice notation.",
+            $doc:"",
         },
         decode: {
             $meth: bytesDecode,
             $flags: { NamedArgs: ["encoding", "errors"] },
             $textsig: "($self, /, encoding='utf-8', errors='strict')",
-            $doc:
-                "Decode the bytes using the codec registered for encoding.\n\n  encoding\n    The encoding with which to decode the bytes.\n  errors\n    The error handling scheme to use for the handling of decoding errors.\n    The default is 'strict' meaning that decoding errors raise a\n    UnicodeDecodeError. Other possible values are 'ignore' and 'replace'\n    as well as any other name registered with codecs.register_error that\n    can handle UnicodeDecodeErrors.",
+            $doc:"",
         },
         endswith: {
             $meth: mkStartsEndsWith("endswith", (subarray, tgt) => {
@@ -421,8 +417,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             }),
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.endswith(suffix[, start[, end]]) -> bool\n\nReturn True if B ends with the specified suffix, False otherwise.\nWith optional start, test B beginning at that position.\nWith optional end, stop comparing B at that position.\nsuffix can also be a tuple of bytes to try.",
+            $doc:"",
         },
         expandtabs: {
             $meth(tabsize) {
@@ -447,8 +442,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NamedArgs: ["tabsize"], Defaults: [8] },
             $textsig: null,
-            $doc:
-                "B.expandtabs(tabsize=8) -> copy of B\n\nReturn a copy of B where all tab characters are expanded using spaces.\nIf tabsize is not given, a tab size of 8 characters is assumed.",
+            $doc:"",
         },
         find: {
             $meth: function find(tgt, start, end) {
@@ -456,8 +450,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.find(sub[, start[, end]]) -> int\n\nReturn the lowest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nReturn -1 on failure.",
+            $doc:"",
         },
         hex: {
             $meth() {
@@ -469,7 +462,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.hex() -> string\n\nCreate a string of hexadecimal numbers from a bytes object.\nExample: b'\\xb9\\x01\\xef'.hex() -> 'b901ef'.",
+            $doc:"",
         },
         index: {
             $meth: function index(tgt, start, end) {
@@ -482,48 +475,43 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.index(sub[, start[, end]]) -> int\n\nReturn the lowest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nRaises ValueError when the subsection is not found.",
+            $doc:"",
         },
         isalnum: {
             $meth: mkIsAll((val) => isdigit(val) || islower(val) || isupper(val)),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.isalnum() -> bool\n\nReturn True if all characters in B are alphanumeric\nand there is at least one character in B, False otherwise.",
+            $doc:"",
         },
         isalpha: {
             $meth: mkIsAll((val) => (val >= 65 && val <= 90) || (val >= 97 && val <= 122)),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.isalpha() -> bool\n\nReturn True if all characters in B are alphabetic\nand there is at least one character in B, False otherwise.",
+            $doc:"",
         },
         isascii: {
             $meth: mkIsAll((val) => val >= 0 && val <= 0x7f, true),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.isascii() -> bool\n\nReturn True if B is empty or all characters in B are ASCII,\nFalse otherwise.",
+            $doc:"",
         },
         isdigit: {
             $meth: mkIsAll(isdigit),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.isdigit() -> bool\n\nReturn True if all characters in B are digits\nand there is at least one character in B, False otherwise.",
+            $doc:"",
         },
         islower: {
             $meth: makeIsUpperLower(islower, isupper),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.islower() -> bool\n\nReturn True if all cased characters in B are lowercase and there is\nat least one cased character in B, False otherwise.",
+            $doc:"",
         },
         isspace: {
             $meth: mkIsAll(isspace),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.isspace() -> bool\n\nReturn True if all characters in B are whitespace\nand there is at least one character in B, False otherwise.",
+            $doc:"",
         },
         istitle: {
             $meth: function istitle() {
@@ -550,15 +538,13 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.istitle() -> bool\n\nReturn True if B is a titlecased string and there is at least one\ncharacter in B, i.e. uppercase characters may only follow uncased\ncharacters and lowercase characters only cased ones. Return False\notherwise.",
+            $doc:"",
         },
         isupper: {
             $meth: makeIsUpperLower(isupper, islower),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.isupper() -> bool\n\nReturn True if all cased characters in B are uppercase and there is\nat least one cased character in B, False otherwise.",
+            $doc:"",
         },
         join: {
             $meth(iterable) {
@@ -582,34 +568,31 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { OneArg: true },
             $textsig: "($self, iterable_of_bytes, /)",
-            $doc:
-                "Concatenate any number of bytes objects.\n\nThe bytes whose method is called is inserted in between each pair.\n\nThe result is returned as a new bytes object.\n\nExample: b'.'.join([b'ab', b'pq', b'rs']) -> b'ab.pq.rs'.",
+            $doc:"",
         },
         ljust: {
             $meth: mkJust("ljust", false, false),
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: null,
-            $doc:
-                "B.ljust(width[, fillchar]) -> copy of B\n\nReturn B left justified in a string of length width. Padding is\ndone using the specified fill character (default is a space).",
+            $doc:"",
         },
         lower: {
             $meth: mkCaseSwitch((val) => (isupper(val) ? val + 32 : val)),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.lower() -> copy of B\n\nReturn a copy of B with all ASCII characters converted to lowercase.",
+            $doc:"",
         },
         lstrip: {
             $meth: mkStrip(true, false),
             $flags: { MinArgs: 0, MaxArgs: 1 },
             $textsig: "($self, bytes=None, /)",
-            $doc: "Strip leading bytes contained in the argument.\n\nIf the argument is omitted or None, strip leading  ASCII whitespace.",
+            $doc:"",
         },
         partition: {
             $meth: mkPartition(false),
             $flags: { OneArg: true },
             $textsig: "($self, sep, /)",
-            $doc:
-                "Partition the bytes into three parts using the given separator.\n\nThis will search for the separator sep in the bytes. If the separator is found,\nreturns a 3-tuple containing the part before the separator, the separator\nitself, and the part after it.\n\nIf the separator is not found, returns a 3-tuple containing the original bytes\nobject and two empty bytes objects.",
+            $doc:"",
         },
         replace: {
             $meth(oldB, newB, count) {
@@ -639,8 +622,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { MinArgs: 2, MaxArgs: 3 },
             $textsig: "($self, old, new, count=-1, /)",
-            $doc:
-                "Return a copy with all occurrences of substring old replaced by new.\n\n  count\n    Maximum number of occurrences to replace.\n    -1 (the default value) means replace all occurrences.\n\nIf the optional argument count is given, only the first count occurrences are\nreplaced.",
+            $doc:"",
         },
         rfind: {
             $meth(tgt, start, end) {
@@ -648,8 +630,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.rfind(sub[, start[, end]]) -> int\n\nReturn the highest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nReturn -1 on failure.",
+            $doc:"",
         },
         rindex: {
             $meth: function rindex(tgt, start, end) {
@@ -662,22 +643,19 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.rindex(sub[, start[, end]]) -> int\n\nReturn the highest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nRaise ValueError when the subsection is not found.",
+            $doc:"",
         },
         rjust: {
             $meth: mkJust("rjust", true, false),
             $flags: { MinArgs: 1, MaxArgs: 2 },
             $textsig: null,
-            $doc:
-                "B.rjust(width[, fillchar]) -> copy of B\n\nReturn B right justified in a string of length width. Padding is\ndone using the specified fill character (default is a space)",
+            $doc:"",
         },
         rpartition: {
             $meth: mkPartition(true),
             $flags: { OneArg: true },
             $textsig: "($self, sep, /)",
-            $doc:
-                "Partition the bytes into three parts using the given separator.\n\nThis will search for the separator sep in the bytes, starting at the end. If\nthe separator is found, returns a 3-tuple containing the part before the\nseparator, the separator itself, and the part after it.\n\nIf the separator is not found, returns a 3-tuple containing two empty bytes\nobjects and the original bytes object.",
+            $doc:"",
         },
         rsplit: {
             $meth: function rSplit(sep, maxsplit) {
@@ -728,14 +706,13 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NamedArgs: ["sep", "maxsplit"], Defaults: [Sk.builtin.none.none$, -1] },
             $textsig: "($self, /, sep=None, maxsplit=-1)",
-            $doc:
-                "Return a list of the sections in the bytes, using sep as the delimiter.\n\n  sep\n    The delimiter according which to split the bytes.\n    None (the default value) means split on ASCII whitespace characters\n    (space, tab, return, newline, formfeed, vertical tab).\n  maxsplit\n    Maximum number of splits to do.\n    -1 (the default value) means no limit.\n\nSplitting is done starting at the end of the bytes and working to the front.",
+            $doc:"",
         },
         rstrip: {
             $meth: mkStrip(false, true),
             $flags: { MinArgs: 0, MaxArgs: 1 },
             $textsig: "($self, bytes=None, /)",
-            $doc: "Strip trailing bytes contained in the argument.\n\nIf the argument is omitted or None, strip trailing ASCII whitespace.",
+            $doc:"",
         },
         split: {
             $meth: function Split(sep, maxsplit) {
@@ -786,8 +763,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NamedArgs: ["sep", "maxsplit"], Defaults: [Sk.builtin.none.none$, -1] },
             $textsig: "($self, /, sep=None, maxsplit=-1)",
-            $doc:
-                "Return a list of the sections in the bytes, using sep as the delimiter.\n\n  sep\n    The delimiter according which to split the bytes.\n    None (the default value) means split on ASCII whitespace characters\n    (space, tab, return, newline, formfeed, vertical tab).\n  maxsplit\n    Maximum number of splits to do.\n    -1 (the default value) means no limit.",
+            $doc:"",
         },
         splitlines: {
             $meth(keepends) {
@@ -825,28 +801,25 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NamedArgs: ["keepends"], Defaults: [false] },
             $textsig: "($self, /, keepends=False)",
-            $doc:
-                "Return a list of the lines in the bytes, breaking at line boundaries.\n\nLine breaks are not included in the resulting list unless keepends is given and\ntrue.",
+            $doc:"",
         },
         startswith: {
             $meth: mkStartsEndsWith("startswith", (subarray, tgt) => tgt.length <= subarray.length && tgt.every((val, i) => val === subarray[i])),
             $flags: { MinArgs: 1, MaxArgs: 3 },
             $textsig: null,
-            $doc:
-                "B.startswith(prefix[, start[, end]]) -> bool\n\nReturn True if B starts with the specified prefix, False otherwise.\nWith optional start, test B beginning at that position.\nWith optional end, stop comparing B at that position.\nprefix can also be a tuple of bytes to try.",
+            $doc:"",
         },
         strip: {
             $meth: mkStrip(true, true),
             $flags: { MinArgs: 0, MaxArgs: 1 },
             $textsig: "($self, bytes=None, /)",
-            $doc:
-                "Strip leading and trailing bytes contained in the argument.\n\nIf the argument is omitted or None, strip leading and trailing ASCII whitespace.",
+            $doc:"",
         },
         swapcase: {
             $meth: mkCaseSwitch((val) => (isupper(val) ? val + 32 : islower(val) ? val - 32 : val)),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.swapcase() -> copy of B\n\nReturn a copy of B with uppercase ASCII characters converted\nto lowercase ASCII and vice versa.",
+            $doc:"",
         },
         title: {
             $meth() {
@@ -870,8 +843,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc:
-                "B.title() -> copy of B\n\nReturn a titlecased version of B, i.e. ASCII words start with uppercase\ncharacters, all remaining cased characters have lowercase.",
+            $doc:"",
         },
         // translate: {
         //     $meth() {
@@ -879,14 +851,13 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
         //     },
         //     $flags: { NoArgs: true },
         //     $textsig: "($self, table, /, delete=b'')",
-        //     $doc:
-        //         "Return a copy with each character mapped by the given translation table.\n\n  table\n    Translation table, which must be a bytes object of length 256.\n\nAll characters occurring in the optional argument delete are removed.\nThe remaining characters are mapped through the given translation table.",
+        //     $doc:"",
         // },
         upper: {
             $meth: mkCaseSwitch((val) => (islower(val) ? val - 32 : val)),
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "B.upper() -> copy of B\n\nReturn a copy of B with all ASCII characters converted to uppercase.",
+            $doc:"",
         },
         zfill: {
             $meth(width) {
@@ -910,8 +881,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc:
-                "B.zfill(width) -> copy of B\n\nPad a numeric string B with zeros on the left, to fill a field\nof the specified width.  B is never truncated.",
+            $doc:"",
         },
     },
     classmethods: {
@@ -944,8 +914,7 @@ Sk.builtin.bytes = Sk.abstr.buildNativeClass("bytes", {
             },
             $flags: { OneArg: true },
             $textsig: "($type, string, /)",
-            $doc:
-                "Create a bytes object from a string of hexadecimal numbers.\n\nSpaces between two numbers are accepted.\nExample: bytes.fromhex('B9 01EF') -> b'\\\\xb9\\\\x01\\\\xef'.",
+            $doc:"",
         },
     },
 });

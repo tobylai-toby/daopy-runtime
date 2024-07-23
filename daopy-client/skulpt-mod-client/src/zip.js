@@ -27,7 +27,7 @@ Sk.builtin.zip_ = Sk.abstr.buildIteratorClass("zip", {
     },
     slots: {
         tp$doc:
-            "zip(iter1 [,iter2 [...]]) --> zip object\n\nReturn a zip object whose .__next__() method returns a tuple where\nthe i-th element comes from the i-th iterable argument.  The .__next__()\nmethod continues until the shortest iterable in the argument sequence\nis exhausted and then it raises StopIteration.",
+            "zip(iter1 [,iter2 [...]]) -> zip object\n\nReturn a zip object whose .__next__() method returns a tuple where\nthe i-th element comes from the i-th iterable argument.  The .__next__()\nmethod continues until the shortest iterable in the argument sequence\nis exhausted and then it raises StopIteration.",
         tp$new(args, kwargs) {
             if (this === Sk.builtin.zip_.prototype) {
                 Sk.abstr.checkNoKwargs("zip", kwargs);

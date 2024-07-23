@@ -77,7 +77,7 @@ Sk.builtin.object = Sk.abstr.buildNativeClass("object", {
             }
             return res;
         },
-        tp$doc: "The most base type",
+        tp$doc:"",
     },
     getsets: {
         __class__: {
@@ -102,7 +102,7 @@ Sk.builtin.object = Sk.abstr.buildNativeClass("object", {
                 checkCompatibleForAssignment(oldto, newto);
                 Object.setPrototypeOf(this, value.prototype);
             },
-            $doc: "the object's class",
+            $doc:"",
         },
     },
     methods: {
@@ -123,7 +123,7 @@ Sk.builtin.object = Sk.abstr.buildNativeClass("object", {
                 return new Sk.builtin.list(dict.sk$asarray());
             },
             $flags: { NoArgs: true },
-            $doc: "Default dir() implementation.",
+            $doc:"",
         },
         __format__: {
             $meth(format_spec) {
@@ -135,7 +135,7 @@ Sk.builtin.object = Sk.abstr.buildNativeClass("object", {
                 return this.tp$str();
             },
             $flags: { OneArg: true },
-            $doc: "Default object formatter.",
+            $doc:"",
         },
     },
     classmethods: {

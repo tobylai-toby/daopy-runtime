@@ -110,7 +110,7 @@ Sk.builtin.generator = Sk.abstr.buildIteratorClass("generator", {
                 });
             },
             $flags: { OneArg: true },
-            $doc: "send(arg) -> send 'arg' into generator,\nreturn next yielded value or raise StopIteration.",
+            $doc:"",
         },
     },
 });

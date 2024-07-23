@@ -29,7 +29,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
         tp$as_number: true,
         tp$as_sequence_or_mapping: true,
         tp$hash: Sk.builtin.none.none$,
-        tp$doc: "set() -> new empty set object\nset(iterable) -> new set object\n\nBuild an unordered collection of unique elements.",
+        tp$doc:"",
         tp$init(args, kwargs) {
             Sk.abstr.checkNoKwargs("set", kwargs);
             Sk.abstr.checkArgsLen("set", args, 0, 1);
@@ -135,7 +135,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Add an element to a set.\n\nThis has no effect if the element is already present.",
+            $doc:"",
         },
         clear: {
             $meth() {
@@ -144,7 +144,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Remove all elements from this set.",
+            $doc:"",
         },
         copy: {
             $meth() {
@@ -152,7 +152,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Return a shallow copy of a set.",
+            $doc:"",
         },
         discard: {
             $meth(entry) {
@@ -162,7 +162,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Remove an element from a set if it is a member.\n\nIf the element is not a member, do nothing.",
+            $doc:"",
         },
         difference: {
             $meth(...args) {
@@ -174,7 +174,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { MinArgs: 0 },
             $textsig: null,
-            $doc: "Return the difference of two or more sets as a new set.\n\n(i.e. all elements that are in this set but not the others.)",
+            $doc:"",
         },
         difference_update: {
             $meth(...args) {
@@ -185,7 +185,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { MinArgs: 0 },
             $textsig: null,
-            $doc: "Remove all elements of another set from this set.",
+            $doc:"",
         },
         intersection: {
             $meth(...args) {
@@ -193,7 +193,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { MinArgs: 0 },
             $textsig: null,
-            $doc: "Return the intersection of two sets as a new set.\n\n(i.e. all elements that are in both sets.)",
+            $doc:"",
         },
         intersection_update: {
             $meth(...args) {
@@ -204,7 +204,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { MinArgs: 0 },
             $textsig: null,
-            $doc: "Update a set with the intersection of itself and another.",
+            $doc:"",
         },
         isdisjoint: {
             $meth(other) {
@@ -220,7 +220,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Return True if two sets have a null intersection.",
+            $doc:"",
         },
         issubset: {
             $meth(other) {
@@ -231,7 +231,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Report whether another set contains this set.",
+            $doc:"",
         },
         issuperset: {
             $meth(other) {
@@ -242,7 +242,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Report whether this set contains another set.",
+            $doc:"",
         },
         pop: {
             $meth() {
@@ -254,13 +254,13 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "Remove and return an arbitrary set element.\nRaises KeyError if the set is empty.",
+            $doc:"",
         },
         // __reduce__: {
         //     $meth: methods.$__reduce__,
         //     $flags:{},
         //     $textsig: null,
-        //     $doc: "Return state information for pickling." },
+        //     $doc:"" },
         remove: {
             $meth(entry) {
                 const tmp = entry_or_hashable_set(entry);
@@ -272,13 +272,13 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Remove an element from a set; it must be a member.\n\nIf the element is not a member, raise a KeyError.",
+            $doc:"",
         },
         // __sizeof__: {
         //     $meth: methods.$__sizeof__,
         //     $flags:{},
         //     $textsig: null,
-        //     $doc: "S.__sizeof__() -> size of S in memory, in bytes" },
+        //     $doc:"" },
         symmetric_difference: {
             $meth(other) {
                 let other_set;
@@ -293,7 +293,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Return the symmetric difference of two sets as a new set.\n\n(i.e. all elements that are in exactly one of the sets.)",
+            $doc:"",
         },
         symmetric_difference_update: {
             $meth(other) {
@@ -308,7 +308,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "Update a set with the symmetric difference of itself and another.",
+            $doc:"",
         },
         union: {
             $meth(...args) {
@@ -320,7 +320,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { MinArgs: 0 },
             $textsig: null,
-            $doc: "Return the union of sets as a new set.\n\n(i.e. all elements that are in either set.)",
+            $doc:"",
         },
         update: {
             $meth(...args) {
@@ -331,7 +331,7 @@ Sk.builtin.set = Sk.abstr.buildNativeClass("set", {
             },
             $flags: { MinArgs: 0 },
             $textsig: null,
-            $doc: "Update a set with the union of itself and others.",
+            $doc:"",
         },
     },
     classmethods: Sk.generic.classGetItem,
@@ -451,8 +451,7 @@ Sk.builtin.frozenset = Sk.abstr.buildNativeClass("frozenset", {
         tp$getattr: Sk.generic.getAttr,
         tp$as_number: true,
         tp$as_sequence_or_mapping: true,
-        tp$doc:
-            "frozenset() -> empty frozenset object\nfrozenset(iterable) -> frozenset object\n\nBuild an immutable unordered collection of unique elements.",
+        tp$doc:"",
         tp$hash() {
             // numbers taken from Cpython 2.7 hash function
             let hash = 1927868237;

@@ -1366,7 +1366,7 @@ class DictTest(unittest.TestCase):
     #     def iter_and_mutate():
     #         for result in d.items():
     #             if result[0] == 2:
-    #                 d[2] = None # free d[2] --> X(2).__del__ was called
+    #                 d[2] = None # free d[2] -> X(2).__del__ was called
 
     #     self.assertRaises(RuntimeError, iter_and_mutate)
 

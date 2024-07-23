@@ -7,7 +7,7 @@ Sk.builtin.module = Sk.abstr.buildNativeClass("module", {
         this.$d = {}; // set this now - we could subclass from Module so override sk$klass $d object
     },
     slots: {
-        tp$doc: "Create a module object.\n\nThe name must be a string; the optional doc argument can have any type.",
+        tp$doc:"",
         tp$getattr(pyName, canSuspend) {
             const jsMangled = pyName.$mangled;
             const ret = this.$d[jsMangled];
@@ -85,7 +85,7 @@ Sk.builtin.module = Sk.abstr.buildNativeClass("module", {
                 }
             },
             $flags: { NoArgs: true },
-            $doc: "__dir__() -> list\nspecialized dir() implementation",
+            $doc:"",
         },
     },
     proto: {

@@ -17,8 +17,7 @@ Sk.builtin.complex = Sk.abstr.buildNativeClass("complex", {
     },
     slots: /**@lends {Sk.builtin.complex.prototype}*/ {
         tp$as_number: true,
-        tp$doc:
-            "Create a complex number from a real part and an optional imaginary part.\n\nThis is equivalent to (real + imag*1j) where imag defaults to 0.",
+        tp$doc:"",
         tp$hash() {
             // _PyHASH_IMAG refers to _PyHASH_MULTIPLIER which refers to 1000003
             const real_hash = new Sk.builtin.float_(this.real).tp$hash();
@@ -141,13 +140,13 @@ Sk.builtin.complex = Sk.abstr.buildNativeClass("complex", {
             $get() {
                 return new Sk.builtin.float_(this.real);
             },
-            $doc: "the real part of a complex number",
+            $doc:"",
         },
         imag: {
             $get() {
                 return new Sk.builtin.float_(this.imag);
             },
-            $doc: "the imaginary part of a complex number",
+            $doc:"",
         },
     },
     methods: /**@lends {Sk.builtin.complex.prototype}*/ {
@@ -157,7 +156,7 @@ Sk.builtin.complex = Sk.abstr.buildNativeClass("complex", {
             },
             $flags: { NoArgs: true },
             $textsig: null,
-            $doc: "complex.conjugate() -> complex\n\nReturn the complex conjugate of its argument. (3-4j).conjugate() == 3+4j.",
+            $doc:"",
         },
         __getnewargs__: {
             $meth() {
@@ -177,7 +176,7 @@ Sk.builtin.complex = Sk.abstr.buildNativeClass("complex", {
             },
             $flags: { OneArg: true },
             $textsig: null,
-            $doc: "complex.__format__() -> str\n\nConvert to a string according to format_spec.",
+            $doc:"",
         },
     },
 });

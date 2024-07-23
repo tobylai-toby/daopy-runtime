@@ -2288,11 +2288,11 @@ class RegressionTests(unittest.TestCase):
 # ...         pass
 # ...     return zip(a, b)
 # >>> def grouper(n, iterable, fillvalue=None):
-# ...     "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
+# ...     "grouper(3, 'ABCDEFG', 'x') -> ABC DEF Gxx"
 # ...     args = [iter(iterable)] * n
 # ...     return zip_longest(*args, fillvalue=fillvalue)
 # >>> def roundrobin(*iterables):
-# ...     "roundrobin('ABC', 'D', 'EF') --> A D E B F C"
+# ...     "roundrobin('ABC', 'D', 'EF') -> A D E B F C"
 # ...     # Recipe credited to George Sakkis
 # ...     pending = len(iterables)
 # ...     nexts = cycle(iter(it).__next__ for it in iterables)
@@ -2304,13 +2304,13 @@ class RegressionTests(unittest.TestCase):
 # ...             pending -= 1
 # ...             nexts = cycle(islice(nexts, pending))
 # >>> def powerset(iterable):
-# ...     "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+# ...     "powerset([1,2,3]) -> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
 # ...     s = list(iterable)
 # ...     return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 # >>> def unique_everseen(iterable, key=None):
 # ...     "List unique elements, preserving order. Remember all elements ever seen."
-# ...     # unique_everseen('AAAABBBCCDAABBB') --> A B C D
-# ...     # unique_everseen('ABBCcAD', str.lower) --> A B C D
+# ...     # unique_everseen('AAAABBBCCDAABBB') -> A B C D
+# ...     # unique_everseen('ABBCcAD', str.lower) -> A B C D
 # ...     seen = set()
 # ...     seen_add = seen.add
 # ...     if key is None:
@@ -2326,8 +2326,8 @@ class RegressionTests(unittest.TestCase):
 # ...                 yield element
 # >>> def unique_justseen(iterable, key=None):
 # ...     "List unique elements, preserving order. Remember only the element just seen."
-# ...     # unique_justseen('AAAABBBCCDAABBB') --> A B C D A B
-# ...     # unique_justseen('ABBCcAD', str.lower) --> A B C A D
+# ...     # unique_justseen('AAAABBBCCDAABBB') -> A B C D A B
+# ...     # unique_justseen('ABBCcAD', str.lower) -> A B C A D
 # ...     return map(next, map(itemgetter(1), groupby(iterable, key)))
 # >>> def first_true(iterable, default=False, pred=None):
 # ...     '''Returns the first true value in the iterable.
@@ -2338,8 +2338,8 @@ class RegressionTests(unittest.TestCase):
 # ...     for which pred(item) is true.
 # ...
 # ...     '''
-# ...     # first_true([a,b,c], x) --> a or b or c or x
-# ...     # first_true([a,b], x, f) --> a if f(a) else b if f(b) else x
+# ...     # first_true([a,b,c], x) -> a or b or c or x
+# ...     # first_true([a,b], x, f) -> a if f(a) else b if f(b) else x
 # ...     return next(filter(pred, iterable), default)
 # >>> def nth_combination(iterable, r, index):
 # ...     'Equivalent to list(combinations(iterable, r))[index]'

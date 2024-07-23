@@ -1864,7 +1864,7 @@ class TestGraphs(unittest.TestCase):
 
     def test_cube(self):
 
-        g = cube(3)                             # vert --> {v1, v2, v3}
+        g = cube(3)                             # vert -> {v1, v2, v3}
         vertices1 = set(g)
         self.assertEqual(len(vertices1), 8)     # eight vertices
         for edge in g.values():
@@ -1884,7 +1884,7 @@ class TestGraphs(unittest.TestCase):
         # 12 identical vertices each connecting a triangle and square
 
         g = cube(3)
-        cuboctahedron = linegraph(g)            # V( --> {V1, V2, V3, V4}
+        cuboctahedron = linegraph(g)            # V( -> {V1, V2, V3, V4}
         self.assertEqual(len(cuboctahedron), 12)# twelve vertices
 
         vertices = set(cuboctahedron)

@@ -29,7 +29,7 @@ const BaseException = Sk.abstr.buildNativeClass("BaseException", {
     },
     slots: /**@lends {BaseException}*/ {
         tp$getattr: Sk.generic.getAttr,
-        tp$doc: "Common base class for all exceptions",
+        tp$doc: "",
         tp$new: BaseExc_new,
         tp$init: BaseExc_init,
         $r() {

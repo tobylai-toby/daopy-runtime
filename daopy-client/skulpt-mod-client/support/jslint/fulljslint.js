@@ -1657,7 +1657,7 @@ var JSLINT = (function () {
                             }
                             character += i;
                             if (s[i + 2] !== '>') {
-                                errorAt("Expected -->.", line, character);
+                                errorAt("Expected ->.", line, character);
                             }
                             character += 3;
                             s = s.slice(i + 3);
@@ -3840,7 +3840,7 @@ loop:   for (;;) {
     delim('</').reach = true;
     delim('<!');
     delim('<!--');
-    delim('-->');
+    delim('->');
     delim('(error)').reach = true;
     delim('}').reach = true;
     delim(')');

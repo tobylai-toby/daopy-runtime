@@ -33,7 +33,7 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
     slots: /**@lends {Sk.builtin.float_.prototype} */ {
         tp$getattr: Sk.generic.getAttr,
         tp$as_number: true,
-        tp$doc: "Convert a string or number to a floating point number, if possible.",
+        tp$doc:"",
         tp$hash() {
             const v = this.v;
             if (!Number.isFinite(v)) {
@@ -176,13 +176,13 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
     getsets: /**@lends {Sk.builtin.float_.prototype} */ {
         real: {
             $get: cloneSelf,
-            $doc: "the real part of a complex number",
+            $doc:"",
         },
         imag: {
             $get() {
                 return new Sk.builtin.float_(0.0);
             },
-            $doc: "the imaginary part of a complex number",
+            $doc:"",
         },
     },
     methods: /**@lends {Sk.builtin.float_.prototype} */ {
@@ -190,7 +190,7 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
             $meth: cloneSelf,
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Return self, the complex conjugate of any float.",
+            $doc:"",
         },
         __trunc__: {
             $meth() {
@@ -198,7 +198,7 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Return the Integral closest to x between 0 and x.",
+            $doc:"",
         },
         __round__: {
             $meth(ndigits) {
@@ -206,7 +206,7 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
             },
             $flags: { MinArgs: 0, MaxArgs: 1 },
             $textsig: "($self, ndigits=None, /)",
-            $doc: "Return the Integral closest to x, rounding half toward even.\n\nWhen an argument is passed, work like built-in round(x, ndigits).",
+            $doc:"",
         },
         as_integer_ratio: {
             $meth() {
@@ -233,15 +233,13 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc:
-                "Return integer ratio.\n\nReturn a pair of integers, whose ratio is exactly equal to the original float\nand with a positive denominator.\n\nRaise OverflowError on infinities and a ValueError on NaNs.\n\n>>> (10.0).as_integer_ratio()\n(10, 1)\n>>> (0.0).as_integer_ratio()\n(0, 1)\n>>> (-.25).as_integer_ratio()\n(-1, 4)",
+            $doc:"",
         },
         // hex: {
         //     $meth: methods.hex,
         //     $flags: { NoArgs: true },
         //     $textsig: "($self, /)",
-        //     $doc:
-        //         "Return a hexadecimal representation of a floating-point number.\n\n>>> (-0.1).hex()\n'-0x1.999999999999ap-4'\n>>> 3.14159.hex()\n'0x1.921f9f01b866ep+1'",
+        //     $doc:"",
         // },
         is_integer: {
             $meth() {
@@ -249,7 +247,7 @@ Sk.builtin.float_ = Sk.abstr.buildNativeClass("float", {
             },
             $flags: { NoArgs: true },
             $textsig: "($self, /)",
-            $doc: "Return True if the float is an integer.",
+            $doc:"",
         },
         __getnewargs__: {
             $meth() {

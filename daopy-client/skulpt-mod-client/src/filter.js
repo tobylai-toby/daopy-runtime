@@ -19,7 +19,7 @@ Sk.builtin.filter_ = Sk.abstr.buildIteratorClass("filter", {
     },
     slots: {
         tp$doc:
-            "Return an iterator yielding those items of iterable for which function(item)\nis true. If function is None, return the items that are true.",
+            "",
         tp$new(args, kwargs) {
             let [func, iterable] = Sk.abstr.copyKeywordsToNamedArgs("filter", ["predicate", "iterable"], args, kwargs, []);
             func = Sk.builtin.checkNone(func) ? null : func;
