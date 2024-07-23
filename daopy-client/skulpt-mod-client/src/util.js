@@ -22,7 +22,7 @@ Sk.global.ENABLE_DATE_NOW=false;
 Sk.global.Date_now=function(){
     return Sk.global.ENABLE_DATE_NOW?new Date():new Date(0);
 };
-Sk.global.char_e=String.fromCharCode(101);// char code of e
+// Sk.global.char_e=String.fromCharCode(101);// char code of e
 /**
  * Export "object" to global namespace as "name".
  *
