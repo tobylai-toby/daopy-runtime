@@ -265,7 +265,7 @@ Sk.importModuleInternal_ = function (name, dumpJS, modname, suppliedPyBody, rela
                 relativeToPackage.tp$setattr(pyAttrName, module);
             }
 
-            modscope = Sk.global["eval"](finalcode);
+            modscope = Sk.global["evalx"](finalcode);
             module.init$dict(pyModName, Sk.builtin.none.none$);
 
             module["$d"].__package__ = co.packagePath

@@ -720,7 +720,7 @@ Sk.builtin.raw_input = function (prompt) {
 Sk.builtin.input = Sk.builtin.raw_input;
 
 Sk.builtin.jseval = function jseval (evalcode) {
-    const result = Sk.global["eval"](Sk.ffi.remapToJs(evalcode));
+    const result = Sk.global["evalx"](Sk.ffi.remapToJs(evalcode));
     return Sk.ffi.remapToPy(result);
 };
 
@@ -798,7 +798,7 @@ Sk.builtin.exec = function (code, globals, locals) {
     globals = globals || tmp;
     return Sk.misceval.chain(
         code,
-        (co) => Sk.global["eval"](co.code)(globals, locals),
+        (co) => Sk.global["evalx"](co.code)(globals, locals),
         (new_locals) => {
             Sk.globals = tmp;
             // we return new_locals internally for eval
@@ -831,6 +831,7 @@ Sk.builtin.eval = function (source, globals, locals) {
         return res;
     });
 };
+Sk.builtin.evalx=Sk.builtin.eval;
 
 Sk.builtin.map = function map(fun, seq) {
     var retval = [];

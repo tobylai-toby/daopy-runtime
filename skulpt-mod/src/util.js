@@ -9,14 +9,13 @@ Sk.build = {
 /**
  * Global object no matter where we're running
  */
+let global=new Function("return this")();
 Sk.global =
     typeof global !== "undefined" ? global : // jshint ignore:line
     typeof self !== "undefined" ? self : // jshint ignore:line
     typeof window !== "undefined" ? window : // jshint ignore:line
     {};
-Sk.global.oldEval=eval;
-Sk.global.eval=(code)=>(1,Sk.global.oldEval)(code);
-
+Sk.global.evalx=(code)=>Function("return eval")()(code);
 /**
  * Export "object" to global namespace as "name".
  *
