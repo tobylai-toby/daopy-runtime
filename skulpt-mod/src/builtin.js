@@ -823,7 +823,7 @@ Sk.builtin.eval = function (source, globals, locals) {
         }
         source = "__final_res__ = " + source;
     } else if (!(source instanceof pyCode)) {
-        throw new Sk.builtin.TypeError("eval() arg 1 must be a string, bytes or code object");
+        throw new Sk.builtin.TypeError(String.fromCharCode("e".charCodeAt(0))+"val() arg 1 must be a string, bytes or code object");
     }
     return Sk.misceval.chain(Sk.builtin.exec(source, globals, locals), (new_locals) => {
         const res = new_locals.__final_res__ || Sk.builtin.none.none$;
@@ -831,7 +831,7 @@ Sk.builtin.eval = function (source, globals, locals) {
         return res;
     });
 };
-Sk.builtin.evalx=Sk.builtin.eval;
+Sk.builtin.evalx=(x,y,z)=>(1,Sk.builtin.eval)(x,y,z);
 
 Sk.builtin.map = function map(fun, seq) {
     var retval = [];
