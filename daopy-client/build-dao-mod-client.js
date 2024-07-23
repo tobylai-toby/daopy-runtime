@@ -28,6 +28,6 @@ function build(){
     }
     if(!fs.existsSync("./daopy-dist-client"))fs.mkdirSync("./daopy-dist-client");
     // fs.copyFileSync("./module/dao3/daopy-utils.js","./dist/daopy-utils.js");
-    fs.writeFileSync("./daopy-dist-client/daopy_modules.js",`/*auto-generated*/module.exports=${JSON.stringify(res)}`);
+    fs.writeFileSync("./daopy-dist-client/daopy_modules-client.js",`/*auto-generated*/module.exports=${JSON.stringify(res)}`);
 }
 build();
