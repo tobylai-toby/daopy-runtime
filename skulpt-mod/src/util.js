@@ -1,6 +1,8 @@
 // Global Sk object
-var Sk = {}; // jshint ignore:line
 
+var Sk = {}; // jshint ignore:line
+globalThis.Sk=Sk;
+// global.Sk = Sk; // jshint ignore:line
 Sk.build = {
     githash: "daopy",
     date: "no-date"
@@ -9,7 +11,7 @@ Sk.build = {
 /**
  * Global object no matter where we're running
  */
-let global=new Function("return this")();
+let global=globalThis;
 Sk.global =
     typeof global !== "undefined" ? global : // jshint ignore:line
     typeof self !== "undefined" ? self : // jshint ignore:line
@@ -60,3 +62,4 @@ Sk.exportSymbol("Sk.build", Sk.build);
 Sk.exportSymbol("Sk.exportSymbol", Sk.exportSymbol);
 Sk.exportSymbol("Sk.isArrayLike", Sk.isArrayLike);
 Sk.exportSymbol("Sk.js_beautify", Sk.js_beautify);
+module.exports={Sk};

@@ -49,7 +49,7 @@ var $builtinmodule = function (name) {
             });
         }));
     }));
-
+    let global=globalThis;
     for (let k of Object.keys(global)) {
         mod[k] = wrapObj(global[k], mod);
     }

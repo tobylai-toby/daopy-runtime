@@ -1,4 +1,6 @@
 var skulpt=require("./skulpt-mod/dist/skulpt.min.js");
+// console.log(skulpt)
+// var Sk=skulpt;
 require("./skulpt-mod/dist/skulpt-stdlib.js");
 function installReadFn(readFn,mods){
     return function (file) {
