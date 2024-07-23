@@ -14,6 +14,8 @@ Sk.global =
     typeof self !== "undefined" ? self : // jshint ignore:line
     typeof window !== "undefined" ? window : // jshint ignore:line
     {};
+Sk.global.oldEval=eval;
+Sk.global.eval=(code)=>(1,Sk.global.oldEval)(code);
 
 /**
  * Export "object" to global namespace as "name".

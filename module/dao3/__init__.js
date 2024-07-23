@@ -45,7 +45,7 @@ var $builtinmodule = function (name) {
     mod.utils=Sk.misceval.callsimOrSuspend(Sk.misceval.buildClass(mod, function ($gbl1, $loc1) {
         $loc1.js=Sk.misceval.callsimOrSuspend(Sk.misceval.buildClass(mod, function ($gbl, $loc) {
             $loc.eval=new Sk.builtin.func(function(self,code){
-                return Sk.ffi.remapToPy(eval(code.v));
+                return Sk.ffi.remapToPy((1,eval)(code.v));
             });
         }));
     }));
