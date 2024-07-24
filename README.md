@@ -2,14 +2,14 @@
 在岛三上运行Python，并支持访问Dao3 API
 
 ## 说明
-> 本项目还未进一步测试
+> 本项目还未进一步测试，不要用于生产
 
 ## 安装
 
 打开`dao3`编辑端，创建两个代码文件：`daopy.js`和`daopy_modules.js`
 
 这两个文件的内容在`dist/`目录下，在那里复制并粘贴进编辑器。
-> `dist/daopy.js` 约有`940+ KB`，岛三编辑器一次性粘贴这么多字符有可能会未响应，可以多试几次，粘贴完就别动它了
+> `dist/daopy.js` 有`800KB左右`，岛三编辑器一次性粘贴这么多字符有可能会未响应，可以多试几次，粘贴完就别动它了
 
 ## 运行
 dao3编辑端
@@ -40,16 +40,12 @@ world.onPlayerJoin(onPlayerJoin)
 from dao3 import *
 ```
 ### 岛三原版绑定
-基本就是个`proxy`
-
-目前全局对象可用`world,voxels,http,resources`
-
-类（例如`GameVector3`）估计能用
+基本就是个`proxy`，代理绑定JS环境中的一切API。
 
 ### utils
 - dao3.utils.js.eval(code)
 
-    使用js运行代码，并返回python结果
+    使用js运行代码，并返回python结果。但这个在client中不知道有无作用。
 
 ## 示例
 1. 与实体交互

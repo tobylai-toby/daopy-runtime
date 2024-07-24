@@ -221,7 +221,7 @@ Sk.importModuleInternal_ = function (name, dumpJS, modname, suppliedPyBody, rela
             }
 
             if (Sk.dateSet == null || !Sk.dateSet) {
-                finalcode = "Sk.execStart = Sk.lastYield = new Date();\n" + co.code;
+                //finalcode = "Sk.execStart = Sk.lastYield = new Date();\n" + co.code;
                 Sk.dateSet = true;
             }
 
